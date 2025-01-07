@@ -1,0 +1,17 @@
+*{
+  box-sizing:  border-box;
+  margin: 0;
+  padding: 0;
+ list-style: none;
+ text-decoration: none;
+ font-family: "Merriweather", serif;
+  font-weight: 500;
+  font-style: normal;
+
+}
+.app-container{
+  display: flex;
+  justify-content: space-between;
+}
+html, body { height: 100%; }
+

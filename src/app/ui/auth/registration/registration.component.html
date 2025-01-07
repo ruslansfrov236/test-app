@@ -1,0 +1,57 @@
+<div class="container">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+    <!-- Email Field -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="text" formControlName="email" placeholder="Enter your email" class="form-control" />
+      <div *ngIf="myForm.get('email').invalid && myForm.get('email').touched" class="error">
+        <span *ngIf="myForm.get('email').errors?.['required']" class="text-danger">This field is required.</span>
+        <span *ngIf="myForm.get('email').errors?.['email']" class="text-danger">Please enter a valid email address.</span>
+      </div>
+    </div>
+
+    <!-- Name Field -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" formControlName="name" placeholder="Enter your name" class="form-control" />
+      <div *ngIf="myForm.get('name').invalid && myForm.get('name').touched" >
+        <span *ngIf="myForm.get('name').errors?.['required']" class="text-danger">This field is required.</span>
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" placeholder="Enter your password" class="form-control" />
+      <div *ngIf="myForm.get('password').invalid && myForm.get('password').touched" class="error">
+        <span *ngIf="myForm.get('password').errors?.['required']" class="text-danger">This field is required.</span>
+        <span *ngIf="myForm.get('password').errors?.['minLength'] " class="text-danger">
+          Password must contain at least 8 characters, one uppercase letter, and one number.
+        </span>
+      </div>
+    </div>
+
+    <!-- Confirm Password Field -->
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" type="password" formControlName="confirmPassword" placeholder="Re-enter your password" class="form-control" />
+      <span *ngIf="errorPasswordMessage" class="text-danger">{{ errorPasswordMessage }}</span>
+    </div>
+
+    <!-- Upload Image Field -->
+    <div class="form-group">
+      <label for="fileUpload">Upload Image</label>
+      <input id="fileUpload" type="file" class="upload-file" (change)="onFileChange($event)" />
+      <span *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</span>
+    </div>
+
+    <!-- Sign-Up Button -->
+    <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary">Sign Up</button>
+
+    <!-- Already Have an Account? -->
+    <div class="form-group">
+      <p class="text-platform">Already have an account? <a routerLink="/auth/">Sign in here</a>.</p>
+    </div>
+  </form>
+</div>

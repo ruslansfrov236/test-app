@@ -1,0 +1,69 @@
+
+.container{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  background-image: url('../../../wwwroot/assets/image/bg-login.gif');
+  place-content: center;
+  place-items: center;
+}
+form{
+  border-radius: 23px;
+  display: grid;
+  place-content: center;
+  gap:1em;
+  place-items: center;
+  width: 400px;
+ height: 95vh;
+  background-color: #d7d7dd41;
+
+}
+.form-group{
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+label{
+  font-weight: 600;
+  color: rgb(32, 40, 53) ;
+  padding: 12px 0;
+
+}
+
+.text-danger{
+  color: rgb(170, 0, 0);
+  font-size: .8em;
+}
+input{
+  display: block;
+  width: 260px;
+  height: 25px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 20px 10px;
+}
+.text-platform>a:hover{
+  transform: scale(1.2);
+  color: #fff;
+  text-decoration: dashed;
+}
+.text-platform , .text-platform>a{
+  transition: all .3s ease-in-out;
+
+  color: rgb(35, 54, 139);
+  font-weight: 600;
+  font-size: .8em;
+}
+.btn-primary{
+  cursor: pointer;
+  margin: 12px 0;
+  width: 150px;
+  border:none;
+  padding: 0px 15px;
+  border-radius: 5px;
+  height: 30px;
+  background-color: rgb(241, 118, 2);
+  color: #fff;
+}

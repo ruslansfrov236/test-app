@@ -1,0 +1,42 @@
+<div class="container">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">Email or Name</label>
+      <input
+        id="name"
+        type="text"
+        formControlName="name"
+        placeholder="Enter your email or name"
+        class="form-control"
+      />
+      <div *ngIf="myForm.get('name').invalid && myForm.get('name').touched" class="error">
+        <span *ngIf="myForm.get('name').errors?.['required']" class="text-danger">This field is required.</span>
+      </div>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="Enter your password"
+        class="form-control"
+      />
+      <div *ngIf="myForm.get('password').invalid && myForm.get('password').touched" class="error">
+        <span *ngIf="myForm.get('password').errors?.['required']"  class="text-danger">This field is required.</span>
+      </div>
+    </div>
+
+
+    <button type="submit" [disabled]="myForm.invalid" class=" btn-primary">Sign In</button>
+
+    <div class="form-group">
+      <p class="text-platform">New to our platform? <a routerLink="/auth/registration">Sign up here</a>.</p>
+
+    </div>
+  </form>
+
+</div>
